@@ -1,12 +1,25 @@
 package udb.edu.sv.desafio01_calculadora
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioGroup
+import android.widget.Switch
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+    val etMontoTotal = findViewById<EditText>(R.id.etMontoTotal)
+    val etNumPersonas = findViewById<EditText>(R.id.etNumPersonas)
+    val rgPropina = findViewById<RadioGroup>(R.id.rgPropina)
+    val etPropinaPersonalizada = findViewById<EditText>(R.id.etPropinaPersonalizada)
+    val switchIVA = findViewById<Switch>(R.id.switchIVA)
+    val btnCalcular = findViewById<Button>(R.id.btnCalcular)
+    val btnLimpiar = findViewById<Button>(R.id.btnLimpiar)
+    val tvResultado = findViewById<TextView>(R.id.tvResultado)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
