@@ -116,4 +116,13 @@ class MainActivity : AppCompatActivity() {
         tvResultado.text = resultado
     }
 
+    private fun limpiarCampos() {
+        etMontoTotal.text.clear()
+        etNumPersonas.text.clear()
+        rgPropina.clearCheck()
+        etPropinaPersonalizada.text.clear()
+        etPropinaPersonalizada.visibility = EditText.GONE
+        switchIVA.isChecked = false
+        tvResultado.text = getString(R.string.label_resultado)
+    }
 }
