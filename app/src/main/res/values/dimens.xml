@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <dimen name="padding">16dp</dimen>
+    <dimen name="spacing">16dp</dimen>
+    <dimen name="small_spacing">8dp</dimen>
+    <dimen name="input_padding">12dp</dimen>
+    <dimen name="title_text_size">24sp</dimen>
+    <dimen name="result_text_size">18sp</dimen>
+</resources>
