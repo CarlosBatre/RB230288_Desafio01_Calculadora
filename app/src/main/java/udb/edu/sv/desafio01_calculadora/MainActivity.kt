@@ -49,4 +49,71 @@ class MainActivity : AppCompatActivity() {
             limpiarCampos()
         }
     }
+    private fun calcularPropina() {
+        // Validar campos vacíos
+        val montoStr = etMontoTotal.text.toString()
+        val personasStr = etNumPersonas.text.toString()
+
+        if (montoStr.isBlank()) {
+            etMontoTotal.error = "Ingrese el monto total"
+            return
+        }
+        if (personasStr.isBlank()) {
+            etNumPersonas.error = "Ingrese el número de personas"
+            return
+        }
+
+        val monto = montoStr.toDoubleOrNull()
+        val personas = personasStr.toIntOrNull()
+
+        if (monto == null || monto <= 0) {
+            etMontoTotal.error = "Monto inválido"
+            return
+        }
+        if (personas == null || personas <= 0) {
+            etNumPersonas.error = "Debe ser mayor a cero"
+            return
+        }
+
+        // Obtener porcentaje de propina
+        val propinaPorcentaje = when (rgPropina.checkedRadioButtonId) {
+            R.id.rb10 -> 10.0
+            R.id.rb15 -> 15.0
+            R.id.rb20 -> 20.0
+            R.id.rbOtro -> {
+                val personalizadaStr = etPropinaPersonalizada.text.toString()
+                if (personalizadaStr.isBlank()) {
+                    etPropinaPersonalizada.error = "Ingrese un valor"
+                    return
+                }
+                val personalizada = personalizadaStr.toDoubleOrNull()
+                if (personalizada == null || personalizada < 0) {
+                    etPropinaPersonalizada.error = "Valor inválido"
+                    return
+                }
+                personalizada
+            }
+            else -> {
+                Toast.makeText(this, "Seleccione un porcentaje de propina", Toast.LENGTH_SHORT).show()
+                return
+            }
+        }
+
+        // Cálculos
+        val propina = monto * propinaPorcentaje / 100
+        val iva = if (switchIVA.isChecked) monto * 0.16 else 0.0
+        val total = monto + propina + iva
+        val porPersona = total / personas
+
+        // Mostrar resultados
+        val resultado = """
+            Propina: $%.2f
+            IVA: $%.2f
+            Total a pagar: $%.2f
+            Total por persona: $%.2f
+        """.trimIndent().format(propina, iva, total, porPersona)
+
+        tvResultado.text = resultado
+    }
+
 }
