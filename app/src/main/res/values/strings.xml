@@ -7,9 +7,11 @@
     <string name="rb_10">10%</string>
     <string name="rb_15">15%</string>
     <string name="rb_20">20%</string>
+    <string name="rb_otro">Otro</string>
     <string name="hint_propina_personalizada">Propina personalizada (%)</string>
     <string name="switch_iva">¿Incluir IVA (16%)?</string>
     <string name="btn_calcular">Calcular</string>
     <string name="btn_limpiar">Limpiar</string>
     <string name="label_resultado">Resultados aparecerán aquí</string>
+
 </resources>
