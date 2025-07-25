@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Desafio01_Calculadora</string>
+    <string name="app_title">Calculadora de Propinas para grupos tacaños</string>
+    <string name="hint_monto_total">Ingrese el monto total</string>
+    <string name="hint_num_personas">Ingrese el número de personas</string>
+    <string name="label_propina">Propina:</string>
+    <string name="rb_10">10%</string>
+    <string name="rb_15">15%</string>
+    <string name="rb_20">20%</string>
+    <string name="hint_propina_personalizada">Propina personalizada (%)</string>
+    <string name="switch_iva">¿Incluir IVA (16%)?</string>
+    <string name="btn_calcular">Calcular</string>
+    <string name="btn_limpiar">Limpiar</string>
+    <string name="label_resultado">Resultados aparecerán aquí</string>
 </resources>
